@@ -34,3 +34,5 @@ spec:
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: "prod"
+      imagePullSecrets:
+        - name: my-docker-credentials
