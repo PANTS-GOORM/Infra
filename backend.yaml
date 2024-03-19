@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pants-be-service
+spec:
+  selector:
+    app: pants-be
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: LoadBalancer
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pants-be-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pants-be
+  template:
+    metadata:
+      labels:
+        app: pants-be
+    spec:
+      containers:
+        - name: pants-be
+          image: chickennight/pants-be:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: "prod"
+      imagePullSecrets:
+        - name: my-docker-credentials
