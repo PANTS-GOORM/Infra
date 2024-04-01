@@ -18,6 +18,7 @@ metadata:
   name: pants-be-deployment
 spec:
   replicas: 3
+  revisionHistoryLimit: 3
   selector:
     matchLabels:
       app: pants-be
