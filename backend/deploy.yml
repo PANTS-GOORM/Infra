@@ -32,8 +32,23 @@ spec:
           image: chickennight/pants-be:latest
           ports:
             - containerPort: 8080
-          env:
-            - name: SPRING_PROFILES_ACTIVE
-              value: "prod"
-      imagePullSecrets:
-        - name: my-docker-credentials
+        env:
+        - name: DATASOURCE_URL
+          value: jdbc:postgresql://${DB_ENDPOINT}:${DB_PORT}/wordsketch?serverTimezone=UTC+9&characterEncoding=UTF-8
+        - name: DATASOURCE_USERNAME
+          value: postgres
+        - name: DATASOURCE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: db-secrets
+              key: password
+        - name: DB_ENDPOINT
+          valueFrom:
+            configMapKeyRef:
+              name: db-config
+              key: endpoint
+        - name: DB_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: db-config
+              key: port
