@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: pants-be-deployment
+  name: pants-be
   namespace: web
 spec:
   replicas: 3
