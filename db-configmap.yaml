@@ -4,5 +4,4 @@ metadata:
   name: db-config
   namespace: web
 data:
-  endpoint: "db-server.cgfm2x2lzylo.ap-northeast-2.rds.amazonaws.com"
-  port: "5432"
+  url: jdbc:postgresql://db-server.cgfm2x2lzylo.ap-northeast-2.rds.amazonaws.com:5432/wordsketch
