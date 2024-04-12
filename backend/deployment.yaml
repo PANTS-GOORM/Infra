@@ -14,10 +14,10 @@ spec:
         app: pants-be
     spec:
       containers:
-        - name: pants-be
-          image: chickennight/pants-be:latest
-          ports:
-            - containerPort: 8080
+      - name: pants-be
+        image: chickennight/pants-be:latest
+        ports:
+        - containerPort: 8080
         env:
         - name: DATASOURCE_URL
           value: jdbc:postgresql://${DB_ENDPOINT}:${DB_PORT}/wordsketch?serverTimezone=UTC+9&characterEncoding=UTF-8
