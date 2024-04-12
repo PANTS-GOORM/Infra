@@ -31,4 +31,19 @@ spec:
                   configMapKeyRef:
                     name: db-config
                     key: port
+              - name: AWS_ACCESS_KEY
+                valueFrom:
+                  secretKeyRef:
+                    name: aws-secret
+                    key: aws_access_key_id
+              - name: AWS_SECRET_KEY
+                valueFrom:
+                  secretKeyRef:
+                    name: aws-secret
+                    key: aws_secret_access_key
+              - name: OPENAI_KEY
+                valueFrom:
+                  secretKeyRef:
+                    name: openai-secret
+                    key: api_key
             restartPolicy: OnFailure
