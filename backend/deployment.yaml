@@ -26,7 +26,10 @@ spec:
                   name: db-config
                   key: url
             - name: SPRING_DATASOURCE_USERNAME
-              value: "postgres"
+              valueFrom:
+                secretKeyRef:
+                  name: db-secrets
+                  key: username
             - name: SPRING_DATASOURCE_PASSWORD
               valueFrom:
                 secretKeyRef:
