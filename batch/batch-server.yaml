@@ -13,25 +13,21 @@ spec:
           - name: batch-container
             image: chickennight/batch-server:0.0.1
             env:
-              - name: DATASOURCE_URL
-                value: jdbc:postgresql://${DB_ENDPOINT}:${DB_PORT}/wordsketch?serverTimezone=UTC+9&characterEncoding=UTF-8
-              - name: DATASOURCE_USERNAME
-                value: postgres
-              - name: DATASOURCE_PASSWORD
+              - name: SPRING_DATASOURCE_URL
+                valueFrom:
+                  configMapKeyRef:
+                    name: db-config
+                    key: url
+              - name: SPRING_DATASOURCE_USERNAME
+                valueFrom:
+                  secretKeyRef:
+                    name: db-secrets
+                    key: username
+              - name: SPRING_DATASOURCE_PASSWORD
                 valueFrom:
                   secretKeyRef:
                     name: db-secrets
                     key: password
-              - name: DB_ENDPOINT
-                valueFrom:
-                  configMapKeyRef:
-                    name: db-config
-                    key: endpoint
-              - name: DB_PORT
-                valueFrom:
-                  configMapKeyRef:
-                    name: db-config
-                    key: port
               - name: AWS_ACCESS_KEY
                 valueFrom:
                   secretKeyRef:
