@@ -2,6 +2,7 @@ apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: batch-cronjob
+  namespace: web
 spec:
   schedule: "0 2 * * *"  # 매일 오전 2시에 실행
   jobTemplate:
