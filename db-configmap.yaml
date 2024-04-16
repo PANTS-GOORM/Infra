@@ -4,5 +4,5 @@ metadata:
   name: db-config
   namespace: web
 data:
-  url: "jdbc:postgresql://db-server.cgfm2x2lzylo.ap-northeast-2.rds.amazonaws.com:5432/wordsketch"
+  url: jdbc:postgresql://db-server.cgfm2x2lzylo.ap-northeast-2.rds.amazonaws.com:5432/wordsketch
 
