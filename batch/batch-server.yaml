@@ -43,4 +43,4 @@ spec:
                   secretKeyRef:
                     name: openai-secret
                     key: api_key
-            restartPolicy: OnFailure
+          restartPolicy: OnFailure  # 여기로 옮겨짐
