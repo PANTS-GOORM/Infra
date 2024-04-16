@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: pants-be
-          image: chickennight/pants-be:0.1.5
+          image: chickennight/pants-be:0.1.7
           ports:
             - containerPort: 8080
           env:
