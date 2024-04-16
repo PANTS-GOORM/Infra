@@ -35,3 +35,53 @@ spec:
                 secretKeyRef:
                   name: db-secrets
                   key: password
+            - name: GOOGLE_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secrets
+                  key: GOOGLE_CLIENT_ID
+            - name: GOOGLE_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secrets
+                  key: GOOGLE_CLIENT_SECRET
+            - name: GOOGLE_REDIRECT_URI
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secrets
+                  key: GOOGLE_REDIRECT_URI
+            - name: GITHUB_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secrets
+                  key: GITHUB_CLIENT_ID
+            - name: GITHUB_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secrets
+                  key: GITHUB_CLIENT_SECRET
+            - name: GITHUB_REDIRECT_URI
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secrets
+                  key: GITHUB_REDIRECT_URI
+            - name: KAKAO_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secrets
+                  key: KAKAO_CLIENT_ID
+            - name: KAKAO_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secrets
+                  key: KAKAO_CLIENT_SECRET
+            - name: KAKAO_REDIRECT_URI
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secrets
+                  key: KAKAO_REDIRECT_URI
+            - name: JWT_SECRETKEY
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secrets
+                  key: JWT_SECRETKEY
