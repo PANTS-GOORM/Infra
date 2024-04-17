@@ -4,7 +4,7 @@ metadata:
   name: batch-cronjob
   namespace: web
 spec:
-  schedule: "21 6 * * *"  # 매일 오전 2시에 실행
+  schedule: "0 17 * * *"  # 매일 오전 2시에 실행
   jobTemplate:
     spec:
       template:
