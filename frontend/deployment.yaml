@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: pants-fe
-          image: chickennight/pants-fe:0.2.6
+          image: chickennight/pants-fe:0.2.7
           ports:
             - containerPort: 80
           env:
