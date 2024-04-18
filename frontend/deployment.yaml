@@ -23,4 +23,4 @@ spec:
             - name: BACKEND_URL
               value: "http://pants-be-service.web.svc.cluster.local"
             - name: REACT_APP_API_URL
-              value: "https://www.wordsketch.site"
+              value: "http://pants-be-service.web.svc.cluster.local"
