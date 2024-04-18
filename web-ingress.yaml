@@ -10,17 +10,28 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: www.wordsketch.site
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: pants-fe-service
-            port:
-              number: 80
+    - host: www.wordsketch.site
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: pants-fe-service
+                port:
+                  number: 80
+    - host: api.wordsketch.site
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: pants-be-service
+                port:
+                  number: 80
   tls:
-  - hosts:
-    - www.wordsketch.site
-    secretName: web-tls
+    - hosts:
+        - www.wordsketch.site
+        - api.wordsketch.site
+      secretName: web-tls
