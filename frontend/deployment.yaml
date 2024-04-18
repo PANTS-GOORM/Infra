@@ -20,5 +20,5 @@ spec:
           ports:
             - containerPort: 80
           env:
-            - name: BACKEND_URL
+            - name: REACT_APP_API_URL
               value: "http://pants-be-service.web.svc.cluster.local"
