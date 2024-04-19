@@ -10,3 +10,4 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 8080
+  sessionAffinity: ClientIP // 동일한 팟으로 세션요청 유지
