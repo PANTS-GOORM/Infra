@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: pants-rank
-          image: chickennight/pants-rank:0.0.0
+          image: chickennight/pants-rank:0.0.2
           ports:
             - containerPort: 8080
           env:
