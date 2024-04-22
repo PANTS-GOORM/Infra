@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: pants-oauth
-          image: chickennight/pants-oauth:3.0.1
+          image: chickennight/pants-oauth:3.0.3
           ports:
             - containerPort: 8080
           env:
