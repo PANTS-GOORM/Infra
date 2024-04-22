@@ -20,22 +20,12 @@ spec:
           ports:
             - containerPort: 8080
           env:
-            - name: SPRING_DATASOURCE_URL
+            - name: REDIS_HOST
               valueFrom:
-                configMapKeyRef:
-                  name: db-config
+                secretKeyRef:
+                  name: redis-config
                   key: url
-            - name: SPRING_DATASOURCE_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: db-secrets
-                  key: username
-            - name: SPRING_DATASOURCE_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: db-secrets
-                  key: password
-            - name: REDIS_URL
+            - name: REDIS_PORT
               valueFrom:
                 secretKeyRef:
                   name: redis-config

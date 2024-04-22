@@ -4,4 +4,5 @@ metadata:
   name: redis-config
   namespace: web
 data:
-  url: pants-redis-zv4v2e.serverless.apn2.cache.amazonaws.com:6379
+  url: pants-redis-zv4v2e.serverless.apn2.cache.amazonaws.com
+  serverport: "6379"
